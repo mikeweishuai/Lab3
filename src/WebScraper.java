@@ -22,11 +22,29 @@ public class WebScraper {
         return contents;
     }
 
+    public static int allWordCount(final String url) {
+        String allWord = urlToString(url);
+        String[] wordCount = allWord.split(" ");
+        return wordCount.length;
+    }
+
+    public static int singleWordCount(final String word, final String url) {
+        String allWord = urlToString(url);
+        String[] wordCount = allWord.split(" ");
+        int count = 0;
+        for (int i = 0; i < wordCount.length; i++) {
+            if (word.equals(wordCount[i].replaceAll("[^(A-Za-z)]", ""))) {
+                count++;
+            }
+        }
+        return count;
+//        String word = word.replaceAll("[^(A-Za-z)]", "");
+    }
+
     public static void main(String[] unused) {
-        String webWord = urlToString("https://www.bls.gov/tus/charts/chart9.txt");
-        System.out.println(webWord);
-        String[] wordCount = webWord.split(" ");
-        System.out.println(wordCount.length);
-        
+//        String webWord = urlToString("https://www.bls.gov/tus/charts/chart9.txt");
+//        System.out.println(webWord);
+        System.out.println(singleWordCount("hours", "https://www.bls.gov/tus/charts/chart9.txt"));
+
     }
 }
