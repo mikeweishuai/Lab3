@@ -44,7 +44,9 @@ public class WebScraper {
     public static void main(String[] unused) {
 //        String webWord = urlToString("https://www.bls.gov/tus/charts/chart9.txt");
 //        System.out.println(webWord);
-        System.out.println(singleWordCount("hours", "https://www.bls.gov/tus/charts/chart9.txt"));
-
+        System.out.println(singleWordCount("leisure", "https://www.bls.gov/tus/charts/chart9.txt"));
+//        String a = "%^$@!abcd";
+//        String b = a.replaceAll("[^(A-Za-z)]", "");
+//        System.out.println(b);
     }
 }
